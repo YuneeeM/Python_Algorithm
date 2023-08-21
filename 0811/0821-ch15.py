@@ -11,7 +11,6 @@ sys.stdin = open("0811/input15.txt", "rt")  # 파일 읽어오기
 '''
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
-sys.setrecursionlimit(10**6)  # 백준에서 채점할때 사용해야함!(재귀 시 데이터가 많을 경우)
 n, m = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(m)]
 
