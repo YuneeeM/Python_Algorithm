@@ -1,23 +1,14 @@
 # 인덱스 바꾸기
-def solution(numbers):
-    arr = ["zero", "one", "two", "three", "four",
-           "five", "six", "seven", "eight", "nine"]
-    for k, v in enumerate(arr):
-        numbers = numbers.replace(v, str(k))
+def solution(my_string, num1, num2):
+    arr = []
+    for x in my_string:
+        arr.append(x)
 
-    return int(numbers)
+    arr[num1], arr[num2] = arr[num2], arr[num1]
 
+    my_string = ""
 
-'''
-def solution(numbers):
-    answer = 0
-    arr=["zero","one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    
     for x in arr:
-        if x in numbers:
-            answer=answer*10+arr.index(x)
-        
-    return answer
+        my_string += x
 
-0을 인식 못해서 위 방법으로 해결함
-'''
+    return my_string

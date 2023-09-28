@@ -1,26 +1,23 @@
 # 영어가 싫어요
 def solution(numbers):
-    answer = ''
     arr = ["zero", "one", "two", "three", "four",
            "five", "six", "seven", "eight", "nine"]
-    if x in arr:
-        n = arr.index(x)
-        answer += n
+    for k, v in enumerate(arr):
+        numbers = numbers.replace(v, str(k))
 
+    return int(numbers)
+
+
+'''
+def solution(numbers):
+    answer = 0
+    arr=["zero","one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    
+    for x in arr:
+        if x in numbers:
+            answer=answer*10+arr.index(x)
+        
     return answer
 
-
-if __name__ == "__main__":
-    numbers = "onetwothreefourfivesixseveneightnine"
-    # print(solution)
-
-    answer = ''
-
-    arr = ["zero", "one", "two", "three", "four",
-           "five", "six", "seven", "eight", "nine"]
-
-    if numbers in arr:
-        n = arr.index(numbers)
-        answer += n
-
-    print(answer)
+0을 인식 못해서 위 방법으로 해결함
+'''
