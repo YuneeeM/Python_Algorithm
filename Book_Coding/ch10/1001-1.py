@@ -1,5 +1,10 @@
 #원형데크디자인 - 이중연결리스트를 이용한 데크 구현
 
+
+class ListNode:
+    def __init__(self, val):
+        self.val = val
+
 class MyCircularDeque:
   def __init__(self,k:int):
     self.head, self.tail = ListNode(None), ListNode(None)
@@ -56,4 +61,4 @@ class MyCircularDeque:
     return self.len == 0
   
   def isFull(self) -> bool:
-    return self.len == self.k
+    return self.len == self.k 
