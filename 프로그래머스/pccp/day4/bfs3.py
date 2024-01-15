@@ -36,8 +36,6 @@ def solution2(tickets):
         path, tic = q.pop(0)
         q.sort()
 
-        print(path, tic)
-
         # 남은 티켓이 없다면 끝
         if len(tic) == 0:
             answer = path
