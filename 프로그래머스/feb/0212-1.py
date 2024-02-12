@@ -1,9 +1,8 @@
-# 타겟 넘버
+# 타겟 넘버(DFS)
 
 def dfs(numbers,target,L,psum):
     global answer
    
-    
     if L == len(numbers) and psum == target:
         answer+=1
         return
@@ -17,7 +16,7 @@ def dfs(numbers,target,L,psum):
 def solution(numbers, target):
     
     global answer
-    answer=0
+    answer=0 # dfs 함수 외부에서 answer를 초기화
     dfs(numbers, target, 0, 0)
     
     return answer
