@@ -11,34 +11,37 @@ N이 주어졌을 때, 퀸을 놓는 방법의 수를 구하는 프로그램
 - 같은 열, 대각선에 퀸이 존재하는 경우를 놓을 수 없음
 '''
 
-n = int(input())
+import sys
+input = sys.stdin.readline
 
 
-def attack(x):  # 퀸이 공격을 받는지 확인
-    for i in range(x):
-        # 같은 행에 퀸이있거나 대각선에 퀸이 있는 경우
-        if row[x] == row[i] or abs(row[x]-row[i]) == abs(x-i):
-            return True
-        return False
+def attack(i):  # i행에 배치한 퀸 대해서 문제 없는지 확인
+    for k in range(i):
+        if row[i] == row[k] or abs(row[i] - row[k]) == abs(i - k):  # 같은 열이거나 같은 대각선
+            return False
+    return True
 
 
-def dfs(st):
-    global count
+def backtracking(i):
+    global result
+    if i == N:  # 모든 행에 문제 없이 퀸을 배치했을 때
+        result += 1
+        return
+    for j in range(N):
+        if check[j]:  # 이미 퀸이 놓인 column
+            continue
+        row[i] = j  # i행 j열에 퀸 놓음
+        if attack(i):
+            check[j] = True  # j열 퀸 배치 체크
+            backtracking(i + 1)  # 다음 행에 대해 수행
+            check[j] = False  # j열 퀸 배치 해제
 
-    # 마지막까지 탐색했을 경우
-    if st == n:
-        count += 1
-    else:
-        for i in range(n):
-            row[st] = i
-            # 퀸의 위협을 받지 않는다면 다음 탐색
-            if not attack(st):
-                dfs(st+1)
 
+N = int(input())
+row = [0] * N  # row[n] = m은 n행 m열에 퀸을 놓았음을 의미한다
+check = [False] * N
+result = 0
 
-# row[i]는 i행에 퀸이 있다는 의미
-row = [0] * n
-count = 0
-dfs(0)
+backtracking(0)
 
-print(count)
+print(result)
