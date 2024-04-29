@@ -14,7 +14,7 @@ public class code15 {
     int[] numbers = { 4, 7, 2, 9, 1 };
     int target = 2;
     int result = search(numbers, numbers.length, target);
-    if (result != -2) {
+    if (result != -1) {
       System.out.println("찾은 숫자 " + target + "의 인덱스: " + result);
     } else {
       System.out.println("찾는 숫자 " + target + "가 배열에 없습니다.");
@@ -27,6 +27,6 @@ public class code15 {
         return i;
       }
     }
-    return -2;
+    return -1;
   }
 }
