@@ -1,25 +1,23 @@
-package INF.march;
+package INF.may;
 
 // study on 05/03/24
 
 // 기본적인 정렬 알고리즘
-// Selection Sort 
+// Bubble Sort 
 // 시간복잡도 O(n^2)
 
-public class code26 {
-  public static void selectionSort(int[] arr, int n) {
+public class code27 {
+  public static void bubbleSort(int[] arr, int n) {
 
-    for (int i = n - 1; i > 0; i--) {
-      int maxIndex = i;
-      for (int j = 0; j < i; j++) {
-        if (arr[j] > arr[maxIndex]) {
-          maxIndex = j;
+    for (int i = 0; i < n - 1; i++) {
+      for (int j = 0; j < n - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          // 두 원소의 위치를 바꿈
+          int temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
         }
       }
-      // Swap arr[i] and arr[maxIndex]
-      int temp = arr[i];
-      arr[i] = arr[maxIndex];
-      arr[maxIndex] = temp;
     }
   }
 
@@ -28,7 +26,7 @@ public class code26 {
     System.out.println("Original Array:");
     printArray(arr);
 
-    selectionSort(arr, arr.length);
+    bubbleSort(arr, arr.length);
 
     System.out.println("Sorted Array:");
     printArray(arr);
