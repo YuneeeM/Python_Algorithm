@@ -2,7 +2,7 @@ package INF.may;
 
 // study on 05/09/24
 
-// 힙정렬
+// 힙정렬 - 반복문 활용
 
 public class code31 {
   private int[] heap;
