@@ -17,3 +17,20 @@ console.log(grades.egoing); //더 간결함
 for (key in grades) {
   console.log("key : " + key + " value : " + grades[key]);
 }
+
+//-------------------------------------------------
+
+var gradess = {
+  'list': { 'egoing': 10, 'k8805': 8, 'sorialgi': 80 },
+  'show': function () {
+    console.log('Hello World!');
+    console.log(this.list);
+    for (var name in this.list) {
+      console.log(name, this.list[name])
+    }
+  }
+}
+
+console.log(gradess['list']['egoing']);
+gradess['show']();
+gradess.show();
