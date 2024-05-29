@@ -65,3 +65,10 @@ const pp = function () {
 }
 
 pp();
+
+
+
+const a = ['김', '나', '박', '이'];
+let b = a.pop()
+b = a.pop()
+console.log(b)
